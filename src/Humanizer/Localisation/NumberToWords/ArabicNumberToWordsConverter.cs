@@ -144,7 +144,7 @@ class ArabicNumberToWordsConverter :
         return result.Trim();
     }
 
-    static readonly Dictionary<string, string> OrdinalExceptions = new()
+    static readonly Dictionary<string, string> OrdinalExceptions = new Dictionary<string, string>
     {
         {
             "واحد", "الحادي"
@@ -184,7 +184,7 @@ class ArabicNumberToWordsConverter :
         },
     };
 
-    static readonly Dictionary<string, string> FeminineOrdinalExceptions = new()
+    static readonly Dictionary<string, string> FeminineOrdinalExceptions = new Dictionary<string, string>
     {
         {
             "واحدة", "الحادية"

@@ -13,8 +13,8 @@ public class Vocabulary
 
     readonly List<Rule> plurals = [];
     readonly List<Rule> singulars = [];
-    readonly HashSet<string> uncountables = new(StringComparer.CurrentCultureIgnoreCase);
-    readonly Regex letterS = new("^([sS])[sS]*$");
+    readonly HashSet<string> uncountables = new HashSet<string>(StringComparer.CurrentCultureIgnoreCase);
+    readonly Regex letterS = new Regex("^([sS])[sS]*$");
 
     /// <summary>
     /// Adds a word to the vocabulary which cannot easily be pluralized/singularized by RegEx, e.g. "person" and "people".
@@ -198,7 +198,7 @@ public class Vocabulary
 
     class Rule(string pattern, string replacement)
     {
-        readonly Regex regex = new(pattern, RegexOptions.IgnoreCase | RegexOptions.Compiled);
+        readonly Regex regex = new Regex(pattern, RegexOptions.IgnoreCase | RegexOptions.Compiled);
 
         public string? Apply(string word)
         {

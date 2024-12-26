@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
+
 namespace Humanizer;
 
 static class EnumCache<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicFields)] T>

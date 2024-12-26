@@ -3,7 +3,7 @@
 [MemoryDiagnoser(false)]
 public class ItalianNumberBenchmarks
 {
-    static CultureInfo culture = new("it");
+    static CultureInfo culture = new CultureInfo("it");
     [Benchmark(Description = "ItalianNumber.ToOrdinalWords")]
     public void ToOrdinalWords()
     {

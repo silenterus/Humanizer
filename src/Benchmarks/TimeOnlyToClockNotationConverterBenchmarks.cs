@@ -1,9 +1,9 @@
 ﻿[MemoryDiagnoser(false)]
 public class TimeOnlyToClockNotationConverterBenchmarks
 {
-    static TimeOnly time = new(13, 6, 2, 88, 987);
+    static TimeOnly time = new TimeOnly(13, 6, 2, 88, 987);
 
-    static EsTimeOnlyToClockNotationConverter esConverter = new();
+    static EsTimeOnlyToClockNotationConverter esConverter = new EsTimeOnlyToClockNotationConverter();
     [Benchmark]
     public void EsClockNotationConverter()
     {
@@ -11,7 +11,7 @@ public class TimeOnlyToClockNotationConverterBenchmarks
         esConverter.Convert(time, ClockNotationRounding.NearestFiveMinutes);
     }
 
-    static BrazilianPortugueseTimeOnlyToClockNotationConverter brazilianConverter = new();
+    static BrazilianPortugueseTimeOnlyToClockNotationConverter brazilianConverter = new BrazilianPortugueseTimeOnlyToClockNotationConverter();
     [Benchmark]
     public void BrazilianPortugueseClockNotationConverter()
     {
@@ -19,7 +19,7 @@ public class TimeOnlyToClockNotationConverterBenchmarks
         brazilianConverter.Convert(time, ClockNotationRounding.NearestFiveMinutes);
     }
 
-    static FrTimeOnlyToClockNotationConverter frConverter = new();
+    static FrTimeOnlyToClockNotationConverter frConverter = new FrTimeOnlyToClockNotationConverter();
     [Benchmark]
     public void FrClockNotationConverter()
     {
@@ -27,7 +27,7 @@ public class TimeOnlyToClockNotationConverterBenchmarks
         frConverter.Convert(time, ClockNotationRounding.NearestFiveMinutes);
     }
 
-    static LbTimeOnlyToClockNotationConverter lbConverter = new();
+    static LbTimeOnlyToClockNotationConverter lbConverter = new LbTimeOnlyToClockNotationConverter();
     [Benchmark]
     public void LbClockNotationConverter()
     {
@@ -35,7 +35,7 @@ public class TimeOnlyToClockNotationConverterBenchmarks
         lbConverter.Convert(time, ClockNotationRounding.NearestFiveMinutes);
     }
 
-    static DefaultTimeOnlyToClockNotationConverter defaultConverter = new();
+    static DefaultTimeOnlyToClockNotationConverter defaultConverter = new DefaultTimeOnlyToClockNotationConverter();
     [Benchmark]
     public void DefaultClockNotationConverter()
     {

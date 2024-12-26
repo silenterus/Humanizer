@@ -22,7 +22,7 @@ class BanglaNumberToWordsConverter :
         "শূন্য", "একশ", "দুইশ", "তিনশ", "চারশ", "পাঁচশ", "ছয়শ", "সাতশ", "আটশ", "নয়শ"
     ];
 
-    static readonly Dictionary<int, string> OrdinalExceptions = new()
+    static readonly Dictionary<int, string> OrdinalExceptions = new Dictionary<int, string>
     {
         {
             1, "প্রথম"

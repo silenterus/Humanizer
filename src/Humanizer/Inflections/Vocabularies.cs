@@ -5,7 +5,7 @@ namespace Humanizer;
 /// </summary>
 public static class Vocabularies
 {
-    static readonly Lazy<Vocabulary> Instance = new(BuildDefault, LazyThreadSafetyMode.PublicationOnly);
+    static readonly Lazy<Vocabulary> Instance = new Lazy<Vocabulary>(BuildDefault, LazyThreadSafetyMode.PublicationOnly);
 
     /// <summary>
     /// The default vocabulary used for singular/plural irregularities.

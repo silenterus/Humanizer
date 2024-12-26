@@ -56,9 +56,9 @@ public class CollectionHumanizeTests
 
     readonly List<SomeClass> _testCollection =
     [
-        new() { SomeInt = 1, SomeString = "One" },
-        new() { SomeInt = 2, SomeString = "Two" },
-        new() { SomeInt = 3, SomeString = "Three" }
+        new SomeClass { SomeInt = 1, SomeString = "One" },
+        new SomeClass { SomeInt = 2, SomeString = "Two" },
+        new SomeClass { SomeInt = 3, SomeString = "Three" }
     ];
 
     [Fact]

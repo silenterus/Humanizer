@@ -6,7 +6,7 @@ class AzerbaijaniNumberToWordsConverter :
     static readonly string[] UnitsMap = ["sıfır", "bir", "iki", "üç", "dörd", "beş", "altı", "yeddi", "səkkiz", "doqquz"];
     static readonly string[] TensMap = ["sıfır", "on", "iyirmi", "otuz", "qırx", "əlli", "altmış", "yetmiş", "səksən", "doxsan"];
 
-    static readonly Dictionary<char, string> OrdinalSuffix = new()
+    static readonly Dictionary<char, string> OrdinalSuffix = new Dictionary<char, string>
     {
         {
             'ı', "ıncı"

@@ -53,7 +53,7 @@ public static class MetricNumeralExtensions
     /// {'d', "deci" },
     /// {'c', "centi"},
     /// </remarks>
-    static readonly Dictionary<char, UnitPrefix> UnitPrefixes = new()
+    static readonly Dictionary<char, UnitPrefix> UnitPrefixes = new Dictionary<char, UnitPrefix>
     {
         {
             'Y', new("yotta", "septillion", "quadrillion")
@@ -328,8 +328,8 @@ public static class MetricNumeralExtensions
     {
         bool outside(double min, double max) => !(max > input && input > min);
 
-        return (Math.Sign(input) == 1 && outside(SmallLimit, BigLimit))
-               || (Math.Sign(input) == -1 && outside(-BigLimit, -SmallLimit));
+        return Math.Sign(input) == 1 && outside(SmallLimit, BigLimit)
+               || Math.Sign(input) == -1 && outside(-BigLimit, -SmallLimit);
     }
 
     /// <summary>

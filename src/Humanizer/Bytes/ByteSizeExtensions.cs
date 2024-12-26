@@ -316,5 +316,5 @@ public static class ByteSizeExtensions
     /// <param name="size">Quantity of bytes</param>
     /// <param name="interval">Interval to create rate for</param>
     public static ByteRate Per(this ByteSize size, TimeSpan interval) =>
-        new(size, interval);
+        new ByteRate(size, interval);
 }

@@ -14,7 +14,7 @@ class HungarianNumberToWordsConverter : GenderlessNumberToWordsConverter
     private static readonly string[] HundredsMap = ["", "száz", "kétszáz", "háromszáz", "négyszáz", "ötszáz", "hatszáz", "hétszáz", "nyolcszáz", "kilencszáz"];
 
     // Exceptional single numbers when used as ordinal numbers and the whole number is greater than 10
-    private static readonly Dictionary<long, string> OrdinalUnitsExceptions = new()
+    private static readonly Dictionary<long, string> OrdinalUnitsExceptions = new Dictionary<long, string>
     {
         {
             1, "egyedik"
@@ -25,7 +25,7 @@ class HungarianNumberToWordsConverter : GenderlessNumberToWordsConverter
     };
 
     // Exceptional ten numbers when the number divided by 10 gives no remainder
-    private static readonly Dictionary<long, string> WholeTensExceptions = new()
+    private static readonly Dictionary<long, string> WholeTensExceptions = new Dictionary<long, string>
     {
         {
             10, "tíz"

@@ -6,7 +6,7 @@
 public class LocaliserRegistry<TLocaliser>
     where TLocaliser : class
 {
-    readonly Dictionary<string, Func<CultureInfo, TLocaliser>> _localisers = new();
+    readonly Dictionary<string, Func<CultureInfo, TLocaliser>> _localisers = new Dictionary<string, Func<CultureInfo, TLocaliser>>();
     readonly Func<CultureInfo, TLocaliser> _defaultLocaliser;
 
     /// <summary>

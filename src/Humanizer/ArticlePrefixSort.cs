@@ -5,7 +5,7 @@ namespace Humanizer;
 /// </summary>
 public static class EnglishArticle
 {
-    static readonly Regex _regex = new("^((The)|(the)|(a)|(A)|(An)|(an))\\s\\w+", RegexOptions.Compiled);
+    static readonly Regex _regex = new Regex("^((The)|(the)|(a)|(A)|(An)|(an))\\s\\w+", RegexOptions.Compiled);
 
     /// <summary>
     /// Removes the prefixed article and appends it to the same string.

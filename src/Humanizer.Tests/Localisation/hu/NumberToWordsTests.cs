@@ -3,7 +3,7 @@ namespace hu;
 [UseCulture("hu-HU")]
 public class NumberToWordsTests
 {
-    private readonly HungarianNumberToWordsConverter converter = new();
+    private readonly HungarianNumberToWordsConverter converter = new HungarianNumberToWordsConverter();
 
     [Theory]
     [InlineData(0, "nulla")]

@@ -5,7 +5,7 @@ class ToTitleCase : ICulturedStringTransformer
     public string Transform(string input) =>
         Transform(input, null);
 
-    static readonly Regex regex = new(@"(\w|[^\u0000-\u007F])+'?\w*", RegexOptions.Compiled);
+    static readonly Regex regex = new Regex(@"(\w|[^\u0000-\u007F])+'?\w*", RegexOptions.Compiled);
 
     public string Transform(string input, CultureInfo? culture)
     {

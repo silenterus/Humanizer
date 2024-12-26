@@ -17,7 +17,7 @@ class SwedishNumberToWordsConverter : GenderlessNumberToWordsConverter
 
     static readonly Fact[] Hunderds =
     [
-        new()
+        new Fact
         {
             Value = 1000000000,
             Name = "miljard",
@@ -26,7 +26,7 @@ class SwedishNumberToWordsConverter : GenderlessNumberToWordsConverter
             DisplayOneUnit = true,
             Gender = GrammaticalGender.Masculine
         },
-        new()
+        new Fact
         {
             Value = 1000000,
             Name = "miljon",
@@ -35,7 +35,7 @@ class SwedishNumberToWordsConverter : GenderlessNumberToWordsConverter
             DisplayOneUnit = true,
             Gender = GrammaticalGender.Masculine
         },
-        new()
+        new Fact
         {
             Value = 1000,
             Name = "tusen",
@@ -43,7 +43,7 @@ class SwedishNumberToWordsConverter : GenderlessNumberToWordsConverter
             Postfix = " ",
             DisplayOneUnit = true
         },
-        new()
+        new Fact
         {
             Value = 100,
             Name = "hundra",

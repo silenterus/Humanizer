@@ -167,22 +167,22 @@ public struct ByteSize(double byteSize) :
     // Get ceiling because bis are whole units
 
     public static ByteSize FromBits(long value) =>
-        new(value / (double) BitsInByte);
+        new ByteSize(value / (double)BitsInByte);
 
     public static ByteSize FromBytes(double value) =>
-        new(value);
+        new ByteSize(value);
 
     public static ByteSize FromKilobytes(double value) =>
-        new(value * BytesInKilobyte);
+        new ByteSize(value * BytesInKilobyte);
 
     public static ByteSize FromMegabytes(double value) =>
-        new(value * BytesInMegabyte);
+        new ByteSize(value * BytesInMegabyte);
 
     public static ByteSize FromGigabytes(double value) =>
-        new(value * BytesInGigabyte);
+        new ByteSize(value * BytesInGigabyte);
 
     public static ByteSize FromTerabytes(double value) =>
-        new(value * BytesInTerabyte);
+        new ByteSize(value * BytesInTerabyte);
 
     /// <summary>
     /// Converts the value of the current ByteSize object to a string.
@@ -328,7 +328,7 @@ public struct ByteSize(double byteSize) :
         Bits.CompareTo(other.Bits);
 
     public ByteSize Add(ByteSize bs) =>
-        new(Bytes + bs.Bytes);
+        new ByteSize(Bytes + bs.Bytes);
 
     public ByteSize AddBits(long value) =>
         this + FromBits(value);
@@ -349,22 +349,22 @@ public struct ByteSize(double byteSize) :
         this + FromTerabytes(value);
 
     public ByteSize Subtract(ByteSize bs) =>
-        new(Bytes - bs.Bytes);
+        new ByteSize(Bytes - bs.Bytes);
 
     public static ByteSize operator +(ByteSize b1, ByteSize b2) =>
-        new(b1.Bytes + b2.Bytes);
+        new ByteSize(b1.Bytes + b2.Bytes);
 
     public static ByteSize operator -(ByteSize b1, ByteSize b2) =>
-        new(b1.Bytes - b2.Bytes);
+        new ByteSize(b1.Bytes - b2.Bytes);
 
     public static ByteSize operator ++(ByteSize b) =>
-        new(b.Bytes + 1);
+        new ByteSize(b.Bytes + 1);
 
     public static ByteSize operator -(ByteSize b) =>
-        new(-b.Bytes);
+        new ByteSize(-b.Bytes);
 
     public static ByteSize operator --(ByteSize b) =>
-        new(b.Bytes - 1);
+        new ByteSize(b.Bytes - 1);
 
     public static bool operator ==(ByteSize b1, ByteSize b2) =>
         b1.Bits == b2.Bits;

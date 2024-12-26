@@ -30,7 +30,7 @@ public class ParsingTests
     [Fact]
     public void TryParseReturnsFalseOnNullOrEmpty()
     {
-        Assert.False(ByteSize.TryParse((string?)null, out var result));
+        Assert.False(ByteSize.TryParse((CharSpan)null, out var result));
         Assert.Equal(default, result);
 
         Assert.False(ByteSize.TryParse(string.Empty, out result));

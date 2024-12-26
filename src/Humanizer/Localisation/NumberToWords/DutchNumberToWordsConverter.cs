@@ -23,7 +23,7 @@ class DutchNumberToWordsConverter :
 
     static readonly Fact[] Hunderds =
     [
-        new()
+        new Fact
         {
             Value = 1_000_000_000_000_000_000L,
             Name = "triljoen",
@@ -31,7 +31,7 @@ class DutchNumberToWordsConverter :
             Postfix = " ",
             DisplayOneUnit = true
         },
-        new()
+        new Fact
         {
             Value = 1_000_000_000_000_000L,
             Name = "biljard",
@@ -39,7 +39,7 @@ class DutchNumberToWordsConverter :
             Postfix = " ",
             DisplayOneUnit = true
         },
-        new()
+        new Fact
         {
             Value = 1_000_000_000_000L,
             Name = "biljoen",
@@ -47,7 +47,7 @@ class DutchNumberToWordsConverter :
             Postfix = " ",
             DisplayOneUnit = true
         },
-        new()
+        new Fact
         {
             Value = 1000000000,
             Name = "miljard",
@@ -55,7 +55,7 @@ class DutchNumberToWordsConverter :
             Postfix = " ",
             DisplayOneUnit = true
         },
-        new()
+        new Fact
         {
             Value = 1000000,
             Name = "miljoen",
@@ -63,7 +63,7 @@ class DutchNumberToWordsConverter :
             Postfix = " ",
             DisplayOneUnit = true
         },
-        new()
+        new Fact
         {
             Value = 1000,
             Name = "duizend",
@@ -71,7 +71,7 @@ class DutchNumberToWordsConverter :
             Postfix = " ",
             DisplayOneUnit = false
         },
-        new()
+        new Fact
         {
             Value = 100,
             Name = "honderd",
@@ -148,7 +148,7 @@ class DutchNumberToWordsConverter :
         return word;
     }
 
-    static readonly Dictionary<string, string> OrdinalExceptions = new()
+    static readonly Dictionary<string, string> OrdinalExceptions = new Dictionary<string, string>
     {
         {
             "een", "eerste"

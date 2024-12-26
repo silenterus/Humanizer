@@ -7,6 +7,6 @@ public partial class InDate
     /// Returns the first of January of the provided year
     /// </summary>
     public static DateOnly TheYear(int year) =>
-        new(year, 1, 1);
+        new DateOnly(year, 1, 1);
 }
 #endif

@@ -9,7 +9,7 @@ class TamilNumberToWordsConverter : GenderlessNumberToWordsConverter
 
     static readonly string[] LakhsMap = ["இலட்ச"];
 
-    static readonly Dictionary<long, string> OrdinalExceptions = new()
+    static readonly Dictionary<long, string> OrdinalExceptions = new Dictionary<long, string>
     {
         {
             1, "முதலாவது"

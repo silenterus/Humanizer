@@ -350,12 +350,12 @@ class SpanishNumberToWordsConverter : GenderedNumberToWordsConverter
         return wordPart;
 
         static bool IsRoundNumber(int number) =>
-            (number % 10000 == 0 && number < 100000)
-            || (number % 100000 == 0 && number < 1000000)
-            || (number % 1000000 == 0 && number < 10000000)
-            || (number % 10000000 == 0 && number < 100000000)
-            || (number % 100000000 == 0 && number < 1000000000)
-            || (number % 1000000000 == 0 && number < int.MaxValue);
+            number % 10000 == 0 && number < 100000
+            || number % 100000 == 0 && number < 1000000
+            || number % 1000000 == 0 && number < 10000000
+            || number % 10000000 == 0 && number < 100000000
+            || number % 100000000 == 0 && number < 1000000000
+            || number % 1000000000 == 0 && number < int.MaxValue;
     }
 
     string ConvertThousands(in long inputNumber, out long remainder, GrammaticalGender gender)

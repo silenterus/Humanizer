@@ -5,7 +5,7 @@ class NorwegianBokmalNumberToWordsConverter : GenderedNumberToWordsConverter
     static readonly string[] UnitsMap = ["null", "en", "to", "tre", "fire", "fem", "seks", "sju", "åtte", "ni", "ti", "elleve", "tolv", "tretten", "fjorten", "femten", "seksten", "sytten", "atten", "nitten"];
     static readonly string[] TensMap = ["null", "ti", "tjue", "tretti", "førti", "femti", "seksti", "sytti", "åtti", "nitti"];
 
-    static readonly Dictionary<int, string> OrdinalExceptions = new()
+    static readonly Dictionary<int, string> OrdinalExceptions = new Dictionary<int, string>
     {
         {
             0, "nullte"

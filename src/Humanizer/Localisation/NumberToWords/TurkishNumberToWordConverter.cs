@@ -6,7 +6,7 @@ class TurkishNumberToWordConverter :
     static readonly string[] UnitsMap = ["sıfır", "bir", "iki", "üç", "dört", "beş", "altı", "yedi", "sekiz", "dokuz"];
     static readonly string[] TensMap = ["sıfır", "on", "yirmi", "otuz", "kırk", "elli", "altmış", "yetmiş", "seksen", "doksan"];
 
-    static readonly Dictionary<char, string> OrdinalSuffix = new()
+    static readonly Dictionary<char, string> OrdinalSuffix = new Dictionary<char, string>
     {
         {
             'ı', "ıncı"
@@ -34,7 +34,7 @@ class TurkishNumberToWordConverter :
         },
     };
 
-    static readonly Dictionary<char, string> TupleSuffix = new()
+    static readonly Dictionary<char, string> TupleSuffix = new Dictionary<char, string>
     {
         {
             'ı', "lı"

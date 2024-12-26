@@ -1,6 +1,7 @@
-using System.Diagnostics;
-using System.Runtime.CompilerServices;
+
+#if NET
 using System.Runtime.InteropServices;
+#endif
 
 namespace Humanizer;
 
@@ -9,12 +10,9 @@ namespace Humanizer;
 /// </summary>
 public static class StringHumanizeExtensions
 {
-    static readonly Regex PascalCaseWordPartsRegex = new(
-        $"({OptionallyCapitalizedWord}|{IntegerAndOptionalLowercaseLetters}|{Acronym}|{SequenceOfOtherLetters}){MidSentencePunctuation}",
-        RegexOptions.IgnorePatternWhitespace | RegexOptions.ExplicitCapture | RegexOptions.Compiled);
+    static readonly Regex PascalCaseWordPartsRegex = new Regex($"({OptionallyCapitalizedWord}|{IntegerAndOptionalLowercaseLetters}|{Acronym}|{SequenceOfOtherLetters}){MidSentencePunctuation}", RegexOptions.IgnorePatternWhitespace | RegexOptions.ExplicitCapture | RegexOptions.Compiled);
 
-    static readonly Regex FreestandingSpacingCharRegex =
-        new(@"\s[-_]|[-_]\s", RegexOptions.Compiled);
+    static readonly Regex FreestandingSpacingCharRegex = new Regex(@"\s[-_]|[-_]\s", RegexOptions.Compiled);
 
     const string OptionallyCapitalizedWord = @"\p{Lu}?\p{Ll}+";
     const string IntegerAndOptionalLowercaseLetters = @"[0-9]+\p{Ll}*";
@@ -35,7 +33,7 @@ public static class StringHumanizeExtensions
             {
                 var value = match.Value;
                 return value.All(char.IsUpper) &&
-                       (value.Length > 1 || (match.Index > 0 && input[match.Index - 1] == ' ') || value == "I")
+                       (value.Length > 1 || match.Index > 0 && input[match.Index - 1] == ' ' || value == "I")
                     ? value
                     : value.ToLower();
             }));
@@ -105,8 +103,8 @@ public static class StringHumanizeExtensions
         var result = new string('\0', left.Length + right.Length);
         fixed (char* pResult = result)
         {
-            left.CopyTo(new Span<char>(pResult, left.Length));
-            right.CopyTo(new Span<char>(pResult + left.Length, right.Length));
+            left.CopyTo(new(pResult, left.Length));
+            right.CopyTo(new(pResult + left.Length, right.Length));
         }
         return result;
     }

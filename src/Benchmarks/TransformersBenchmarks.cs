@@ -10,19 +10,18 @@ public class TransformersBenchmarks
             .Concat(Enumerable.Range('a', 'z' - 'a'))
             .Concat(Enumerable.Range('A', 'Z' - 'A'))
             .Concat(Enumerable.Range('0', '9' - '0'))
-            .Concat(new int[]
-            {
+            .Concat([
                 '.',
                 ',',
                 '(',
                 ')',
                 '!',
                 '$'
-            })
+            ])
             .Select(x => (char) x)
             .ToArray();
 
-    Random random = new(RAND_SEED);
+    Random random = new Random(RAND_SEED);
     string input = null!;
 
     [Params(10, 100, 1000)]

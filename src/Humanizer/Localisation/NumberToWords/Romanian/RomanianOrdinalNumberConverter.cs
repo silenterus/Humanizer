@@ -5,7 +5,7 @@ class RomanianOrdinalNumberConverter
     /// <summary>
     /// Lookup table converting units number to text. Index 1 for 1, index 2 for 2, up to index 9.
     /// </summary>
-    readonly Dictionary<int, string> _ordinalsUnder10 = new()
+    readonly Dictionary<int, string> _ordinalsUnder10 = new Dictionary<int, string>
     {
         {
             1, "primul|prima"

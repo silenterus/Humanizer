@@ -20,7 +20,7 @@ class IcelandicNumberToWordsConverter : GenderedNumberToWordsConverter
         public required string OrdinalPrefix { get; set; }
     }
 
-    static readonly Dictionary<int, Fact> PowerOfTenMap = new()
+    static readonly Dictionary<int, Fact> PowerOfTenMap = new Dictionary<int, Fact>
     {
         {
             0, new()
@@ -308,7 +308,7 @@ class IcelandicNumberToWordsConverter : GenderedNumberToWordsConverter
             number %= (int) rule.Power;
 
             // https://malfar.arnastofnun.is/grein/65658
-            if (number > 0 && (number > 19 || (number % 100 > 10 && number % 100 % 10 == 0)))
+            if (number > 0 && (number > 19 || number % 100 > 10 && number % 100 % 10 == 0))
             {
                 if (remainder == 1)
                 {
